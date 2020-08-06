@@ -1,0 +1,17 @@
+!pip install --quiet --upgrade tensorflow_federated_nightly
+!pip install --quiet --upgrade nest_asyncio
+
+import nest_asyncio
+nest_asyncio.apply()
+
+%load_ext tensorboard
+ import collections
+
+import numpy as np
+import tensorflow as tf
+import tensorflow_federated as tff
+
+np.random.seed(0)
+
+tff.federated_computation(lambda: 'Hello, World!')()
+b'Hello, World!'
